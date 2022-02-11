@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<style>
+		*{
+		margin:0;
+		padding:0;
+		}
+		html{
+		height: 100%;
+		width: 100%;
+		}
+		body {
+		  height: 100%;
+		  width: 100%;
+		}
+		model-viewer{
+		height:100%;
+		width:100;
+		}
+
+    </style>
+  
+  <style type="text/css">
+     .mobileShow { display: none;}
+   /* Smartphone Portrait and Landscape */
+   @media only screen
+   and (min-device-width : 320px)
+   and (max-device-width : 480px){ .mobileShow { display: inline;}}
+</style>
+  <style type="text/css">
+   .mobileHide { display: inline;}
+   /* Smartphone Portrait and Landscape */
+   @media only screen
+   and (min-device-width : 320px)
+   and (max-device-width : 480px){  .mobileHide { display: none;}}
+</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Omnicell IVX Station Model Viewer</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+  <style>
+      model-viewer{
+		height:550px;
+		width:400px;
+	        margin: 0 auto;
+	        }
+    #ar-button {
+    background-image: url(asset/ariconewhite.png);
+    background-repeat: no-repeat;
+    background-size: 22px 26px;
+    background-position: 12px 50%;
+    background-color: #42B655;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    bottom: 35px;
+    padding: 0px 16px 0px 45px;
+    font-family: Roboto Regular, Helvetica Neue, sans-serif;
+    font-size: 15px;
+    color:#ffffff;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 18px;
+    border: 0px solid #000000;
+  }
+    #ar-button:active {
+    background-color: #E8EAED;
+  }
+
+  #ar-button:focus {
+    outline: none;
+  }
+
+  #ar-button:focus-visible {
+    outline: 1px solid #4285f4;
+  }
+
+    model-viewer > #ar-prompt {
+    position: absolute;
+    left: 50%;
+    bottom: 165px;
+    animation: elongate 2s infinite ease-in-out alternate;
+    display: none;
+  }
+
+  model-viewer[ar-status="session-started"] > #ar-prompt {
+    display: block;
+  }
+
+  model-viewer > #ar-prompt > img {
+    animation: circle 4s linear infinite;
+  }
+  </style>
+
+<body>
+     <model-viewer src="asset/IVX Station AR Single_Final.glb" ar ar-modes="webxr scene-viewer quick-look" ios-src="asset/IVX Station AR Single_Final.usdz" shadow-intensity="5.0" environment-image="asset/workshop.hdr" ar-scale="fixed" ar ar-placement="floor" exposure="1.2" shadow-softness="1" camera-controls ar autoplay auto-rotate="">
+    <button slot="ar-button" id="ar-button"> View in your space </button> </model-viewer>
+    
+  <center><p><style>
+  h4 {
+    font-family: Verdana, "Open Sans", sans-serif;
+  }
+  p {
+    font-family: Verdana, "Open Sans", sans-serif;
+    font-size: 1.0em;
+  }
+</style>
+    //<div class="mobileShow">
+    //<img src="asset/instruction_mobile.png" style="max-width:95%; height:auto; padding: 0px 0px 0px 10px;">
+</div>
+  <div class="mobileHide">
+<picture>
+    <img src="asset/instruction_web.png" style="width:450px; height:150px;">
+</picture>
+</div>
+
+  
+</body>
+
+</html> 

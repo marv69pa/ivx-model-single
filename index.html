@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>&lt;model-viewer&gt; template</title>
+    <meta charset="utf-8">
+    <meta name="description" content="&lt;model-viewer&gt; template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="styles.css" rel="stylesheet">
+
+    <style type="text/css">
+  		.mobileShow {
+  			display: none;
+  		}
+
+  		/* Smartphone Portrait and Landscape */
+  		@media only screen and (max-device-width : 1024px) {
+  			.mobileShow {
+  				display: inline;
+  			}
+  		}
+  	</style>
+  	<style type="text/css">
+  		.mobileHide {
+  			display: inline;
+  		}
+
+  		/* Smartphone Portrait and Landscape */
+  		@media only screen and (max-device-width : 1024px) {
+  			.mobileHide {
+  				display: none;
+  			}
+  		}
+  	</style>
+
+
+    <!-- OPTIONAL: The :focus-visible polyfill removes the focus ring for some input types -->
+    <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
+  </head>
+  <body style="text-align:center">
+    <!-- <model-viewer> HTML element -->
+    <model-viewer src="asset/IVXStation-One-Comp.glb" ar-modes="webxr scene-viewer quick-look" ios-src="asset/IVXStation-One-Comp.usdz" ar-scale="fixed" ar-placement="floor" shadow-intensity="1.4" camera-orbit="-10deg 80deg auto"
+  		min-camera-orbit="auto 0deg auto" max-camera-orbit="auto 104deg auto" camera-controls ar auto-rotate autoplay environment-image="asset/aircraft_workshop.hdr" exposure="1">
+
+      <div class="progress-bar hide" slot="progress-bar">
+          <div class="update-bar"></div>
+      </div>
+      <button slot="ar-button" id="ar-button">
+          View in your space
+      </button>
+      <div id="ar-prompt">
+          <img src="asset/ar_hand_prompt.png">
+      </div>
+    </model-viewer>
+
+    
+  	<div class="mobileHide">
+  		<picture>
+  			<img src="asset/instruction_web.png" style="width:500px; height:auto;">
+  		</picture>
+  	</div>
+
+    <script src="script.js"></script>
+    <!-- Loads <model-viewer> for browsers: -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  	<script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+
+  </body>
+</html>
